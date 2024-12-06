@@ -30,6 +30,17 @@ const WeatherCard: React.FC<WeatherProps[]> = (weatherData) => {
     });
   };
 
+  // Fonction pour trouver une ville valide
+  const findValidCity = (): string => {
+    // Vérifie si la ville est définie dans les données du créneau sélectionné
+    if (currentData.ville !== "Unknown") {
+      return currentData.ville;
+    }
+    // Sinon, cherche dans les autres données
+    const validData = dataArray.find((data) => data.ville);
+    return validData ? validData.ville : "Ville inconnue"; // Retourne une valeur par défaut si aucune ville n'est trouvée
+  };
+
   // Fonction pour trouver un index valide en parcourant les indices voisins
   const findValidIndex = (
     index: number,
@@ -127,7 +138,7 @@ const WeatherCard: React.FC<WeatherProps[]> = (weatherData) => {
       {/* Header */}
       <div className="text-center mb-6">
         <h2 className="text-gray-700 font-semibold text-lg">
-          Météo aujourd&apos;hui à {currentData.ville}
+          Météo aujourd&apos;hui à {findValidCity()}
         </h2>
         <div className="mt-4">
           <p className="text-6xl font-bold text-gray-800">
