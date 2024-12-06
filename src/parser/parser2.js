@@ -37,11 +37,13 @@ export const filterWeatherDataSPARQL = async (
     PREFIX ex: <http://example.org/weather#>
     PREFIX xsd: <https://www.w3.org/2001/XMLSchema-datatypes>
     
-    SELECT ?station ?dateTime ?temperature ?humidity ?pressure ?wind ?dewPoint ?ville
+    SELECT ?station ?dateTime ?temperature ?max ?min ?humidity ?pressure ?wind ?dewPoint ?ville
     WHERE {
       ?station a ex:Station .
       ?station ex:dateTime ?dateTime .
       ?station ex:temperature ?temperature .
+      ?station ex:max ?max .
+      ?station ex:min ?min .
       ?station ex:humidity ?humidity .
       ?station ex:pressure ?pressure .
       ?station ex:wind ?wind .
@@ -64,6 +66,8 @@ export const filterWeatherDataSPARQL = async (
     stationId: result.station.value.split("/").pop(), // Extrait l'ID de la station
     dateTime: new Date(result.dateTime.value),
     temperature: parseFloat(result.temperature.value) - 273.15, // Convertit la température de Kelvin à Celsius
+    max: parseFloat(result.max.value) - 273.15, // Convertit la température de Kelvin à Celsius
+    min: parseFloat(result.min.value) - 273.15, // Convertit la température de Kelvin à Celsius
     humidity: parseInt(result.humidity.value),
     pressure: parseFloat(result.pressure.value),
     wind: parseFloat(result.wind.value),
