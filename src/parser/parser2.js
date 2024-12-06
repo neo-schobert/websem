@@ -49,7 +49,6 @@ export const filterWeatherDataSPARQL = async (
       ?station ex:ville ?ville .
       
       FILTER(?station = ex:${selectedStationId}) 
-      FILTER(DATATYPE(?dateTime) = xsd:string)
       FILTER(STRDT(?dateTime, xsd:string) = "${targetDate
         .toISOString()
         .slice(0, 19)
