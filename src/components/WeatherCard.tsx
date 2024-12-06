@@ -19,11 +19,8 @@ const WeatherCard: React.FC<WeatherProps[]> = (weatherData) => {
   const [selectedInterval, setSelectedInterval] = useState(0);
   const dataArray = Object.values(weatherData);
 
-  console.log(dataArray);
   // Données du créneau sélectionné
   const currentData = dataArray[selectedInterval];
-
-  console.log(currentData);
 
   // Fonction de formatage de l'heure
   const formatHour = (date: Date): string => {
