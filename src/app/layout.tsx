@@ -24,12 +24,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+    <html lang="fr">
+      <head>
+        {/* Lien vers votre favicon */}
+        <link rel="icon" href="/favicon.png" />
+        <meta name="theme-color" content="#ffffff" />
+      </head>
+      <body>{children}</body>
     </html>
   );
 }
