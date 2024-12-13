@@ -1,36 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Weather Data Viewer
 
-## Getting Started
+**Weather Data Viewer** est une application web construite avec **Next.js** permettant de visualiser les données météorologiques stockées dans une base de données Turtle locale. L'application récupère les informations à l'aide de requêtes SPARQL et les affiche de manière simple et claire sur l'interface web.
 
-First, run the development server:
+## Fonctionnalités
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Visualisation des données météo** : Affiche les données météorologiques (température, humidité, précipitations, etc.) extraites d'une base de données Turtle locale.
+- **Interface simple et interactive** : Développée avec **Next.js**, l'application propose une interface facile à utiliser pour consulter les données.
+- **Requêtes SPARQL** : L'application effectue des requêtes SPARQL pour récupérer les informations météorologiques de la base de données.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Prérequis
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Avant de démarrer l'application, vous devez avoir installé les éléments suivants :
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Node.js** (version 16 ou plus récente)
+- **npm** (inclus avec Node.js)
+- Un serveur SPARQL (par exemple **Apache Jena Fuseki**) hébergeant la base de données Turtle locale.
 
-## Learn More
+## Installation
 
-To learn more about Next.js, take a look at the following resources:
+1. Clonez ce repository sur votre machine :
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   git clone https://github.com/votre-utilisateur/weather-data-viewer.git
+   cd weather-data-viewer
+   
+2. Installez les dépendances du projet :
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   ```bash
+    npm install
 
-## Deploy on Vercel
+3. Lancez l'application en mode développement :
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   ```bash
+   npm run dev
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
